@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": "nodemon server.js",
     "test": "jest"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
   "devDependencies": {
     "jest": "^28.1.2",
     "node-mocks-http": "^1.11.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
   }
 }
