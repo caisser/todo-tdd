@@ -17,10 +17,5 @@ app.use((error, req, res, next) => {
   res.status(500).json({ message: error.message });
   next();
 });
-// app.get("/", (req, res, next) => {
-//   res.status(200).json({
-//     status: "Hello world",
-//   });
-// });
 
 module.exports = app;
