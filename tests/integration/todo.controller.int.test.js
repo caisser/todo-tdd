@@ -5,6 +5,10 @@ const newTodo = require("../mock-data/new-todo.json");
 const endpointUrl = "/todos/";
 
 describe(endpointUrl, () => {
+  // test(`GET ${endpointUrl}:id`, () => {
+  //   const response = await request(app).get(``)
+  // });
+
   test("GET " + endpointUrl, async () => {
     const response = await request(app).get(endpointUrl);
     expect(response.statusCode).toBe(200);
@@ -12,14 +16,15 @@ describe(endpointUrl, () => {
     expect(response.body[0].title).toBeDefined();
     expect(response.body[0].done).toBeDefined();
   });
-  it("POST" + endpointUrl, async () => {
+
+  test("POST" + endpointUrl, async () => {
     const response = await request(app).post(endpointUrl).send(newTodo);
     expect(response.statusCode).toBe(201);
     expect(response.body.title).toBe(newTodo.title);
     expect(response.body.done).toBe(newTodo.done);
   });
 
-  it(
+  test(
     "should return error 500 on malformed data with POST" + endpointUrl,
     async () => {
       const response = await request(app)
